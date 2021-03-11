@@ -1,0 +1,20 @@
+{
+  "name": "modrn-ui",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^11.0.4",
+    "@angular/core": "^11.0.4",
+    "@angular/forms": "^11.0.4"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "main": "bundles/modrn-ui.umd.js",
+  "module": "fesm2015/modrn-ui.js",
+  "es2015": "fesm2015/modrn-ui.js",
+  "esm2015": "esm2015/modrn-ui.js",
+  "fesm2015": "fesm2015/modrn-ui.js",
+  "typings": "modrn-ui.d.ts",
+  "metadata": "modrn-ui.metadata.json",
+  "sideEffects": false
+}
