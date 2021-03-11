@@ -1,0 +1,12 @@
+{
+  "name": "modrn-ui",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^11.0.4",
+    "@angular/core": "^11.0.4",
+    "@angular/forms": "^11.0.4"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

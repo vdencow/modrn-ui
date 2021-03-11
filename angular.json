@@ -3,5 +3,46 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "modrn-ui": {
+      "projectType": "library",
+      "root": "projects/modrn-ui",
+      "sourceRoot": "projects/modrn-ui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/modrn-ui/tsconfig.lib.json",
+            "project": "projects/modrn-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/modrn-ui/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/modrn-ui/src/test.ts",
+            "tsConfig": "projects/modrn-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/modrn-ui/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/modrn-ui/tsconfig.lib.json",
+              "projects/modrn-ui/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "modrn-ui"
 }
