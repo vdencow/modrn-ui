@@ -1,0 +1,1 @@
+{"version":3,"file":"checkbox.component.d.ts","sourceRoot":"","sources":["../../../../projects/modrn-ui/src/lib/components/checkbox.component.ts"],"names":[],"mappings":"AAAA,OAAO,EAAa,YAAY,EAAS,MAAM,EAA6B,MAAM,eAAe,CAAC;AAClG,OAAO,EAAE,WAAW,EAAE,MAAM,gBAAgB,CAAC;AAE7C,qBAiEa,iBAAkB,YAAW,MAAM;IAElC,MAAM,oBAAqB;IACrC,OAAO,cAAyB;;IAGhC,QAAQ,IAAI,IAAI;IAIhB,OAAO;CAIV"}

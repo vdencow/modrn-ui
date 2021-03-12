@@ -66,7 +66,7 @@ import { FormControl } from '@angular/forms';
   ],
   encapsulation: ViewEncapsulation.None
 })
-export class ButtonComponent implements OnInit {
+export class CheckBoxComponent implements OnInit {
 
     @Output() change = new EventEmitter()
     control = new FormControl(false)

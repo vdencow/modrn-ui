@@ -1,12 +1,13 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('@angular/core'), require('@angular/common')) :
-	typeof define === 'function' && define.amd ? define('modrn-ui', ['@angular/core', '@angular/common'], factory) :
-	(global = typeof globalThis !== 'undefined' ? globalThis : global || self, global['modrn-ui'] = factory(global.ng.core, global.ng.common));
-}(this, (function (core_1, common_1) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('@angular/core'), require('@angular/forms'), require('@angular/common')) :
+	typeof define === 'function' && define.amd ? define('modrn-ui', ['@angular/core', '@angular/forms', '@angular/common'], factory) :
+	(global = typeof globalThis !== 'undefined' ? globalThis : global || self, global['modrn-ui'] = factory(global.ng.core, global.ng.forms, global.ng.common));
+}(this, (function (core_1, forms_1, common_1) { 'use strict';
 
 	function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
 	var core_1__default = /*#__PURE__*/_interopDefaultLegacy(core_1);
+	var forms_1__default = /*#__PURE__*/_interopDefaultLegacy(forms_1);
 	var common_1__default = /*#__PURE__*/_interopDefaultLegacy(common_1);
 
 	var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -463,6 +464,46 @@
 	});
 	var button_component$1 = /*@__PURE__*/ getDefaultExportFromCjs(button_component);
 
+	var checkbox_component = createCommonjsModule(function (module, exports) {
+	    "use strict";
+	    Object.defineProperty(exports, "__esModule", { value: true });
+	    exports.CheckBoxComponent = void 0;
+	    var CheckBoxComponent = /** @class */ (function () {
+	        function CheckBoxComponent() {
+	            this.change = new core_1__default['default'].EventEmitter();
+	            this.control = new forms_1__default['default'].FormControl(false);
+	        }
+	        CheckBoxComponent.prototype.ngOnInit = function () {
+	        };
+	        CheckBoxComponent.prototype.onClick = function () {
+	            this.change.emit(this.control.value);
+	        };
+	        return CheckBoxComponent;
+	    }());
+	    exports.CheckBoxComponent = CheckBoxComponent;
+	    CheckBoxComponent.decorators = [
+	        { type: core_1__default['default'].Component, args: [{
+	                    selector: 'modrn-button',
+	                    template: "\n    <label class=\"container\">\n        <ng-content></ng-content>\n        <input [formControl]=\"control\" type=\"checkbox\">\n        <span class=\"check\"></span>\n    </label>\n  ",
+	                    encapsulation: core_1__default['default'].ViewEncapsulation.None,
+	                    styles: [".container {\n        display: block;\n        position: relative;\n        padding-left: 35px;\n        margin-bottom: 12px;\n        cursor: pointer;\n        font-size: 22px;\n        -webkit-user-select: none;\n        -moz-user-select: none;\n        -ms-user-select: none;\n        user-select: none;\n      }",
+	                        ".container input {\n        position: absolute;\n        opacity: 0;\n        cursor: pointer;\n        height: 0;\n        width: 0;\n      }",
+	                        ".check {\n        position: absolute;\n        top: 0;\n        left: 0;\n        height: 25px;\n        width: 25px;\n        background-color: #eee;\n      }",
+	                        ".container:hover input ~ .check {\n        background-color: #ccc;\n      }",
+	                        ".container input:checked ~ .check {\n        background-color: #2196F3;\n      }",
+	                        ".checkmark:after {\n        content: \"\";\n        position: absolute;\n        display: none;\n      }",
+	                        ".container input:checked ~ .check:after {\n        display: block;\n      }",
+	                        ".container .check:after {\n        left: 9px;\n        top: 5px;\n        width: 5px;\n        height: 10px;\n        border: solid white;\n        border-width: 0 3px 3px 0;\n        -webkit-transform: rotate(45deg);\n        -ms-transform: rotate(45deg);\n        transform: rotate(45deg);\n      }"]
+	                },] }
+	    ];
+	    CheckBoxComponent.ctorParameters = function () { return []; };
+	    CheckBoxComponent.propDecorators = {
+	        change: [{ type: core_1__default['default'].Output }]
+	    };
+	    
+	});
+	var checkbox_component$1 = /*@__PURE__*/ getDefaultExportFromCjs(checkbox_component);
+
 	var formField_component = createCommonjsModule(function (module, exports) {
 	    "use strict";
 	    Object.defineProperty(exports, "__esModule", { value: true });
@@ -498,11 +539,11 @@
 	    exports.ModrnUiModule = ModrnUiModule;
 	    ModrnUiModule.decorators = [
 	        { type: core_1__default['default'].NgModule, args: [{
-	                    declarations: [modrnUi_component.ModrnUiComponent, formField_component.FormFieldComponent, button_component.ButtonComponent],
+	                    declarations: [modrnUi_component.ModrnUiComponent, formField_component.FormFieldComponent, button_component.ButtonComponent, checkbox_component.CheckBoxComponent],
 	                    imports: [
 	                        common_1__default['default'].CommonModule,
 	                    ],
-	                    exports: [modrnUi_component.ModrnUiComponent, formField_component.FormFieldComponent, button_component.ButtonComponent]
+	                    exports: [modrnUi_component.ModrnUiComponent, formField_component.FormFieldComponent, button_component.ButtonComponent, checkbox_component.CheckBoxComponent]
 	                },] }
 	    ];
 	    
@@ -520,6 +561,7 @@
 	    tslib_1.__exportStar(modrnUi_service, exports);
 	    tslib_1.__exportStar(modrnUi_component, exports);
 	    tslib_1.__exportStar(button_component, exports);
+	    tslib_1.__exportStar(checkbox_component, exports);
 	    tslib_1.__exportStar(formField_component, exports);
 	    tslib_1.__exportStar(modrnUi_module, exports);
 	    

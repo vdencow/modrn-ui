@@ -1,5 +1,6 @@
 import tslib_1 from 'tslib';
 import core_1 from '@angular/core';
+import forms_1 from '@angular/forms';
 import common_1 from '@angular/common';
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -131,6 +132,98 @@ ButtonComponent.propDecorators = {
 
 var button_component$1 = /*@__PURE__*/getDefaultExportFromCjs(button_component);
 
+var checkbox_component = createCommonjsModule(function (module, exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CheckBoxComponent = void 0;
+
+
+class CheckBoxComponent {
+    constructor() {
+        this.change = new core_1.EventEmitter();
+        this.control = new forms_1.FormControl(false);
+    }
+    ngOnInit() {
+    }
+    onClick() {
+        this.change.emit(this.control.value);
+    }
+}
+exports.CheckBoxComponent = CheckBoxComponent;
+CheckBoxComponent.decorators = [
+    { type: core_1.Component, args: [{
+                selector: 'modrn-button',
+                template: `
+    <label class="container">
+        <ng-content></ng-content>
+        <input [formControl]="control" type="checkbox">
+        <span class="check"></span>
+    </label>
+  `,
+                encapsulation: core_1.ViewEncapsulation.None,
+                styles: [`.container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }`,
+                    `.container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }`,
+                    `.check {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+      }`,
+                    `.container:hover input ~ .check {
+        background-color: #ccc;
+      }`,
+                    `.container input:checked ~ .check {
+        background-color: #2196F3;
+      }`,
+                    `.checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }`,
+                    `.container input:checked ~ .check:after {
+        display: block;
+      }`,
+                    `.container .check:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }`]
+            },] }
+];
+CheckBoxComponent.ctorParameters = () => [];
+CheckBoxComponent.propDecorators = {
+    change: [{ type: core_1.Output }]
+};
+
+});
+
+var checkbox_component$1 = /*@__PURE__*/getDefaultExportFromCjs(checkbox_component);
+
 var formField_component = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -165,16 +258,17 @@ exports.ModrnUiModule = void 0;
 
 
 
+
 class ModrnUiModule {
 }
 exports.ModrnUiModule = ModrnUiModule;
 ModrnUiModule.decorators = [
     { type: core_1.NgModule, args: [{
-                declarations: [modrnUi_component.ModrnUiComponent, formField_component.FormFieldComponent, button_component.ButtonComponent],
+                declarations: [modrnUi_component.ModrnUiComponent, formField_component.FormFieldComponent, button_component.ButtonComponent, checkbox_component.CheckBoxComponent],
                 imports: [
                     common_1.CommonModule,
                 ],
-                exports: [modrnUi_component.ModrnUiComponent, formField_component.FormFieldComponent, button_component.ButtonComponent]
+                exports: [modrnUi_component.ModrnUiComponent, formField_component.FormFieldComponent, button_component.ButtonComponent, checkbox_component.CheckBoxComponent]
             },] }
 ];
 
@@ -192,6 +286,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 tslib_1.__exportStar(modrnUi_service, exports);
 tslib_1.__exportStar(modrnUi_component, exports);
 tslib_1.__exportStar(button_component, exports);
+tslib_1.__exportStar(checkbox_component, exports);
 tslib_1.__exportStar(formField_component, exports);
 tslib_1.__exportStar(modrnUi_module, exports);
 
